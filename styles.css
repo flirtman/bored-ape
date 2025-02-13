@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Rubik+Wet+Paint&display=swap');
+
+/**
+NOTE:
+-   I do not use css nesting and variables here
+    because in this project we focus on css and what we have study in class.
+-   Main objective during my styling is to follow teacher's guidelines as much as possible.
+
+MEMO:
+Yellow HEX: e2ff02
+Yellow RGB: 226, 255, 2
+
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-family: "Rubik Wet Paint", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+p, li, a, button {
+    font-family: "Geologica", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+section {
+    padding: 100px 24px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-gray {
+    background-image: url("./imgs/noise-light.webp");
+    background-size: cover;
+    background-position: center;
+    background-color: #2b2727;
+}
+
+.bg-gray-light {
+    background-color: #f1f1f1;
+}
+
+/****** BUTTONS ******/
+button.btn-hero {
+    padding: 12px 24px;
+    border: 2px dashed #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.6s linear;
+}
+
+button.btn-hero:hover {
+    color: #e2ff02;
+    border-color: #e2ff02;
+    border-radius: 255px 15px 225px 15px/15px 0 15px 0;
+}
+
+a.btn-general {
+    padding: 12px 24px;
+    border: 2px dashed #000;
+    background-color: transparent;
+    color: #000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.6s linear;
+    text-decoration: none;
+}
+
+a.btn-general:hover {
+    border-radius: 255px 15px 225px 15px/15px 0 15px 0;
+}
+
+
+@keyframes flash-border {
+    0% {
+        box-shadow: 0 0 10px rgba(226, 255, 2, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(226, 255, 2, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(226, 255, 2, 0.3);
+    }
+}
+
+.btn-play {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid rgba(226, 255, 2, 0.3);
+    padding: 0;
+    margin-top: 48px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btn-play:hover {
+    animation: flash-border 1.2s infinite;
+}
+.btn-play img {
+    width: 100%;
+    margin: 0;
+}
+
+/****** HEADER  ******/
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    max-width: 100px;
+    margin-top: 8px;
+    margin-bottom: -16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+header ul {
+    display: flex;
+    list-style: none;
+    margin: 0 16px;
+    gap: 24px;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #000;
+}
+header ul a:hover {
+    border-bottom: 2px dashed #000;
+}
+
+header .mob-nav {
+    display: none;
+    border: 0;
+    background-color: transparent;
+    margin: 0 16px;
+}
+header .logo {
+    margin-left: 16px;
+}
+header .mob-nav img {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+/**** HERO *****/
+
+.hero {
+    padding: 250px 24px;
+    text-align: center;
+    background-image: url("./imgs/bg.png");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(0,0,0, 0.7);
+    color: #fff;
+}
+
+.hero .container {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #e2ff02;
+}
+.hero p {
+    font-size: 20px;
+    margin: 24px 0 48px;
+}
+
+/******** COLLECTION ******/
+
+.collection h2 {
+    color: #000;
+    font-size: 35px;
+}
+
+.collection p {
+    margin: 24px 0 48px;
+}
+
+.collection .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/******  CARD  ******/
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.card .card-header {
+    height: 200px;
+    background-position: center;
+    background-size: 100%;
+    padding: 16px;
+    transition: background-size 0.3s linear;
+}
+
+.card .card-body {
+    padding: 16px;
+    height: 100px;
+}
+
+.card:hover .card-header {
+    background-size: 150%;
+}
+
+.card .tag {
+    border-radius: 24px;
+    background-color: #fff;
+    padding: 4px 8px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.card .tag img {
+    max-width: 20px;
+}
+
+.collection-footer {
+    text-align: center;
+    margin-top: 48px;
+}
+
+/**** VIDEO SECTION *****/
+
+.video-section {
+    background-image: url("./imgs/bg2_.avif");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0,0,0,0.7);
+    padding: 48px 0;
+    color: #fff;
+    text-align: center;
+}
+.video-section h2 {
+    font-size: 40px;
+    color: #e2ff02;
+    text-shadow: 1px 1px 2px black;
+}
+
+/**** SALES POINTS ****/
+
+.sales-points .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+}
+.sales-points .row .col {
+    text-align: center;
+    max-width: 250px;
+}
+
+.sales-points h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.sales-points img {
+    width: 200px;
+    height: 200px;
+    background-image: url("./imgs/noise-light.webp");
+    background-size: cover;
+    background-position: center;
+    background-color: #2b2727;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    margin-bottom: 24px;
+}
+
+/***** FOOTER ******/
+footer {
+    background-image: url("./imgs/noise-light.webp");
+    background-size: cover;
+    background-position: center;
+    background-color: #2b2727;
+    text-align: center;
+    color: #757575;
+    padding: 24px;
+}
+
+
+/**** MEDIA QUERIES ****/
+@media (min-width: 768px) and (max-width: 992px) {
+    .sales-points .row img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .sales-points .row .col h3 {
+        font-size: 16px;
+    }
+    .sales-points .row .col p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 48px 24px;
+    }
+    .collection .grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sales-points .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    header .mob-nav {
+        display: inline-block;
+    }
+    header ul {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .collection .grid-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
